@@ -1,11 +1,1 @@
-{:itonami.blueprint/id "cloud-itonami-isco-3521"
- :itonami.blueprint/name "Independent Broadcast & Media Syndication Practice"
- :itonami.blueprint/isco-08 "3521"
- :itonami.blueprint/domain :media/broadcasting-syndication
- :itonami.blueprint/license "AGPL-3.0-or-later"
- :itonami.blueprint/social-impact [:public-information-access :independent-media-diversity :civic-literacy]
- :itonami.blueprint/governor :media-broadcast-governor
- :itonami.blueprint/robotics true
- :itonami.blueprint/required-technologies [:robotics :identity :audit-ledger :media-pipeline]
- :itonami.blueprint/status :public-oss
- :itonami.blueprint/upstream-actor "github.com/etzhayyim/com-etzhayyim-kawaraban"}
+[{:itonami.blueprint/social-impact [:public-information-access :independent-media-diversity :civic-literacy], :itonami.blueprint/domain :media/broadcasting-syndication, :itonami.blueprint/required-technologies [:robotics :identity :audit-ledger :media-pipeline], :itonami.blueprint/isco-08 "3521", :itonami.blueprint/name "Independent Broadcast & Media Syndication Practice", :itonami.blueprint/upstream-actor "github.com/etzhayyim/com-etzhayyim-kawaraban", :itonami.blueprint/governor :media-broadcast-governor, :itonami.blueprint/robotics true, :db/id -1, :itonami.blueprint/status :public-oss, :itonami.blueprint/id "cloud-itonami-isco-3521", :itonami.blueprint/license "AGPL-3.0-or-later"}]
