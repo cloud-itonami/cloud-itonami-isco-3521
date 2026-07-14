@@ -16,6 +16,28 @@ service. It never touches kawaraban's own charter: no full-text scraping, no imp
 kawaraban or the mirrored outlets, and every derivative product always attributes back to
 kawaraban and the original outlet link.
 
+**Maturity: `:implemented`.** `src/media/` implements the
+`MediaBroadcastActor` as a `langgraph.graph/state-graph` (`media.actor`)
+wired to a `MediaAdvisor` (`media.advisor`) and an independent
+`MediaBroadcastGovernor` (`media.governor`, matching this repo's
+`blueprint.edn` `:itonami.blueprint/governor :media-broadcast-governor`),
+following the itonami actor pattern (ADR-2607011000): `:intake -> :advise
+-> :govern -> :decide -+-> :commit (:ok?) +-> :request-approval
+(:escalate?, human-in-the-loop interrupt) +-> :hold (:hard?)`. 15 tests /
+31 assertions green (`clojure -M:test`). HARD invariants (always hold,
+never overridable): client/practice provenance, no-actuation (`:effect`
+must be `:propose`), a registered kawaraban-article basis for any
+derivative-product proposal, the proposed quoted excerpt not exceeding
+the article's registered kawaraban fair-use bound (quoting beyond it is
+full-text reproduction, not excerpting), and the proposed product's
+attribution/link-out exactly matching what kawaraban published the
+article under (anything else is misattribution or impersonation, not
+syndication). Always-escalate ops (human sign-off regardless of
+confidence, mapping this README's Trust Controls):
+`:approve-publish-derivative-product` (publishing a derivative broadcast
+product) and `:approve-live-on-air-switching` (any live on-air
+switching).
+
 ## Robotics premise
 
 All cloud-itonami verticals are designed on the premise that a **robot performs the
