@@ -24,7 +24,7 @@ wired to a `MediaAdvisor` (`media.advisor`) and an independent
 following the itonami actor pattern (ADR-2607011000): `:intake -> :advise
 -> :govern -> :decide -+-> :commit (:ok?) +-> :request-approval
 (:escalate?, human-in-the-loop interrupt) +-> :hold (:hard?)`. 15 tests /
-31 assertions green (`clojure -M:test`). HARD invariants (always hold,
+31 assertions green (`kbb -M:test`). HARD invariants (always hold,
 never overridable): client/practice provenance, no-actuation (`:effect`
 must be `:propose`), a registered kawaraban-article basis for any
 derivative-product proposal, the proposed quoted excerpt not exceeding
