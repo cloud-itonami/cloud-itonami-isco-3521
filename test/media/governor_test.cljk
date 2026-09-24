@@ -1,5 +1,5 @@
 (ns media.governor-test
-  (:require [clojure.test :refer [deftest is testing]]
+  (:require [kotoba.test :refer [deftest is testing]]
             [media.store :as store]
             [media.governor :as governor]))
 
